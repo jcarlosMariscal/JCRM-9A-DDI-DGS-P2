@@ -21,5 +21,8 @@ from miapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hola-django/', views.hola_django, name="hola_django")
+    path('', views.index, name="index"),
+    path('inicio/', views.index, name="inicio"),
+    path('hola-django/', views.hola_django, name="hola_django"),
+    path('pagina-pruebas/', views.pagina, name="pagina")
 ]
