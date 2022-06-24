@@ -1,14 +1,34 @@
 # from curses.ascii import HT
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
+# import layoutparser as layout
 
 # Create your views here.
 
 # MVC - Modelo Vista Controlador -> Acciones (métodos) 
 # MVT - Modelo Vista Template (solo en django) -> Acciones (métodos)
 
+layout = """
+    <h1>Bienvenido a la página de Inicio</h1>
+    <hr>
+    <ul>
+        <li>
+            <a href="/inicio">Inicio</a>
+        </li>
+        <li>
+            <a href="/hola-django">Hola Django</a>
+        </li>
+        <li>
+            <a href="/pagina-pruebas">Página de pruebas</a>
+        </li>
+        <li>
+            <a href="/contacto">Contacto</a>
+        </li>
+    </ul>
+    <hr>
+"""
+
 def index(request):
     html = """
-        <h1>Bienvenido a la página de inicio</h1>
         <br><br>
         <h3>Años hasta el 2050</h3>
         <ul>
@@ -20,10 +40,10 @@ def index(request):
         year += 1
     html += "</ul>"
     
-    return HttpResponse(html)
+    return HttpResponse(layout + html)
 
 def hola_django(request):
-    return HttpResponse(
+    return HttpResponse(layout +
         """
             <center>
             <h1>Universidad Tecnológica de Tehuacán</h1>
@@ -33,10 +53,20 @@ def hola_django(request):
         """
     )
 
-def pagina(request):
-    return HttpResponse(
+def pagina(request, redirigir=0):
+    if redirigir == 1:
+        return redirect('contacto', nombre="Victor", apellidos="Arismendi")
+        # return redirect('/contacto/Sandra/Mora')
+    return HttpResponse(layout +
         """
             <h1>Página Web</h1>
             <h3>Materia DDI - Python - Django - Web</h3>
         """
     )
+
+def contacto(request, nombre ="", apellidos=""):
+    html = ""
+    if nombre and apellidos:
+        html += "<p>El nombre completo es: </p>"
+        html += f"<h3>{nombre} {apellidos}</h3>"
+    return HttpResponse(layout + f"<h2>Contacto {nombre} {apellidos}</h2>" + html)
