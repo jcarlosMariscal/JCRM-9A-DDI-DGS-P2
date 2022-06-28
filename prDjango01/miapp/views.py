@@ -40,29 +40,17 @@ def index(request):
         year += 1
     html += "</ul>"
     
-    return HttpResponse(layout + html)
+    # return HttpResponse(layout + html)
+    return render(request, 'index.html')
 
 def hola_django(request):
-    return HttpResponse(layout +
-        """
-            <center>
-            <h1>Universidad Tecnológica de Tehuacán</h1>
-            <h2>Django - Python - Web</h2>
-            <h3>DDI - 9A</h3>
-            </center>
-        """
-    )
+    return render(request, 'hola_django.html')
 
 def pagina(request, redirigir=0):
     if redirigir == 1:
         return redirect('contacto', nombre="Victor", apellidos="Arismendi")
         # return redirect('/contacto/Sandra/Mora')
-    return HttpResponse(layout +
-        """
-            <h1>Página Web</h1>
-            <h3>Materia DDI - Python - Django - Web</h3>
-        """
-    )
+    return render(request, 'pagina.html')
 
 def contacto(request, nombre ="", apellidos=""):
     html = ""

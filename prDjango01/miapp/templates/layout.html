@@ -1,0 +1,39 @@
+<!--Cargar carpeta STATIC-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="static/css/style.css">-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+        | JCRM
+    </title>
+</head>
+<body>
+    <h1>Bienvenido a la página de Inicio</h1>
+    <hr>
+    <ul>
+        <li><a href="/inicio">Inicio</a></li>
+        <li><a href="/hola-django">Hola Django</a>
+        <li><a href="/pagina-pruebas">Página de pruebas</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+    </ul>
+    <hr>
+
+    <div id="content">
+        {% block content %}
+            <!--Código que viene de Templates-->
+            <strong>Contenido del bloque original !!!</strong>
+        {% endblock %}
+    </div>
+    <footer>
+        Python - Django &copy; | JCRM
+    </footer>
+</body>
+</html>
