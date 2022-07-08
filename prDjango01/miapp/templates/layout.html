@@ -16,17 +16,25 @@
     </title>
 </head>
 <body>
-    <h1>Bienvenido a la página de Inicio</h1>
-    <hr>
-    <ul>
-        <li><a href="/inicio">Inicio</a></li>
-        <li><a href="/hola-django">Hola Django</a>
-        <li><a href="/pagina-pruebas">Página de pruebas</a></li>
-        <li><a href="/contacto">Contacto</a></li>
-    </ul>
-    <hr>
-
+    <!-- CABECERA DE LA PÁGINA -->
+    <header>
+        <div id="logotipo">
+            <!-- Logo de Django -->
+            <img src="{% static 'img/logo.png' %}" alt="">
+            <h1>Sitio Web con Django</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/inicio">Inicio</a></li>
+            <li><a href="/hola-django">Hola Django</a>
+            <li><a href="/pagina-pruebas">Página de pruebas</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    
     <div id="content">
+        <h2 class="title">Titulo de prueba</h2>
         {% block content %}
             <!--Código que viene de Templates-->
             <strong>Contenido del bloque original !!!</strong>
