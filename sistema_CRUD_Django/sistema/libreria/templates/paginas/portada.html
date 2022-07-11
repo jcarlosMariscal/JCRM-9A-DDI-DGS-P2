@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block titulo %} Portada {% endblock %}
+
+{% block contenido %} 
+<style>
+    .card{
+        width: 70%;
+        margin: auto;
+        border-radius: 0%;
+        border: none;
+    }
+    .card-header{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .card-footer{
+        font-size: 20px;
+        color: #FFF;
+        font-weight: bold;
+    }
+    .card-header, .card-footer{
+        background-color: rgb(15, 100, 100);
+        border-radius: 0%;
+        color: #FFF;
+    }
+    .card-body{
+        border-left: 1px solid rgb(15, 100, 100);
+        border-right: 1px solid rgb(15, 100, 100);
+    }
+</style>
+<!-- <div class="p-5 bg-light"> -->
+    <!-- <div class="container"> -->
+        <div class="card text-center">
+            <div class="card-header">
+              Universidad Tecnológica de Tehuacán - TI - 9A
+            </div>
+            <div class="card-body">
+                <img src="https://ouch-cdn2.icons8.com/vZD-nOO0-rKGloPBW0WjLQF-i8hfkpa7QWY_3L4YTGA/rs:fit:684:456/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMzAx/L2Y1ZWI5ZGEwLTM3/ZWMtNDUxYy1iODNl/LTVjMzc1NGU5NjQx/NC5zdmc.png" width="200px" alt="">
+              <h5 class="card-title">CRUD con Django y MySQL</h5>
+              <h6 class="card-title">Desarrollo para Dispositivos Inteligentes</h6>
+              <p class="card-text"><b>Juan Carlos Ramírez Mariscal</b></p>
+              <p class="card-text"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> : <a href="https://github.com/jcarlosMariscal/JCRM-9A-DDI-DGS-P2/tree/main/sistema_CRUD_Django" target="_blank">jcarlosMariscal/JCRM-9A-DDI-DGS-P2/sistema_CRUD_Django</a></p>
+              <img src="https://studygyaan.com/wp-content/uploads/2019/11/Django-MySQL-Connection.png" width="250px" alt="">
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+            <div class="card-footer text-muted">
+              11 de julio de 2022
+            </div>
+          </div>
+    <!-- </div> -->
+<!-- </div> -->
+{% endblock %}

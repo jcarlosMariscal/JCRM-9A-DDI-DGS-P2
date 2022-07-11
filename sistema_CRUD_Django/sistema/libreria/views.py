@@ -8,6 +8,8 @@ def inicio(request):
     return render(request, 'paginas/inicio.html')
 def nosotros(request):
     return render(request, 'paginas/nosotros.html')
+def portada(request):
+    return render(request, 'paginas/portada.html')
 
 # Acceso a libros
 def libros(request):
