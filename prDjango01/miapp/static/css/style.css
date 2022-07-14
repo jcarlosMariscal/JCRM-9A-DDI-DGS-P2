@@ -5,6 +5,13 @@
     font-family: sans-serif, Arial, Helvetica;
     text-decoration: none;
 }
+p,h2,h3,ul{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+ul, ol{
+    margin-left: 20px;
+}
 body{
     background-color: #f2f2f2;
 }
@@ -31,4 +38,11 @@ header{
     height: 40px;
     float: left;
     margin-right: 10px;
+}
+
+.esquina-derecha{
+    display: block;
+    border-left: 20px solid transparent;
+    border-top: 10px solid #2b2f30;
+    float: right;
 }

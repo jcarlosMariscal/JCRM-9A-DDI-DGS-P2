@@ -40,8 +40,14 @@ def index(request):
         year += 1
     html += "</ul>"
     
-    # return HttpResponse(layout + html)
-    return render(request, 'index.html')
+    nombre = 'Carlos Mariscal'
+    lenguajes = ['JavaScript', 'Python', 'PHP', 'C', 'JS']
+    return render(request, 'index.html', {
+        'title': 'Inicio',
+        'mi_variable': 'Soy un dato que está en la vista',
+        'nombre': nombre,
+        'lenguajes': lenguajes,
+    })
 
 def hola_django(request):
     return render(request, 'hola_django.html')
