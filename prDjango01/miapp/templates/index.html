@@ -4,6 +4,7 @@
     Página de Inicio
 {% endblock %}
 {% block content %}
+
     <!-- Esto es un comentario en HTML-->
     {% comment 'Esto es un comentario' %}  
         <h1>hola hola hola</h1>
@@ -21,9 +22,13 @@
     <h3>Listado de lenguajes de programación</h3>
     <ul>
         {% for lenguaje in lenguajes %}
-            <li>{{lenguaje}}</li>
+            <li>{{forloop.counter}}. {{lenguaje}}</li> <!--First, last, counter0, revcounter: FILTROS-->
+        {% empty %}
+            <p>NO HAY LENGUAJES QUE MOSTRAR...</p>
         {% endfor %}
     </ul>
 
-    <h3>Años hasta el 2050</h3>
+    <!--INCLUIR OTRO ARCHIVO - template-->
+    {% include 'fecha-actual.html' with saludo="Hola, esta es una plantilla" %} <!--Agregar only ...-->
+
 {% endblock %}

@@ -28,26 +28,33 @@ layout = """
 """
 
 def index(request):
-    html = """
+    """  
+    html = 
         <br><br>
         <h3>Años hasta el 2050</h3>
         <ul>
-    """
+    
     year = 2022
     while year <= 2060:
         if year % 2 == 0:
             html += f"<li>{str(year)}</li>"
         year += 1
     html += "</ul>"
-    
+    """
+    year = 2021
+    hasta = range(year, 2051)
+
     nombre = 'Carlos Mariscal'
     lenguajes = ['JavaScript', 'Python', 'PHP', 'C', 'JS']
+    # lenguajes = []
     return render(request, 'index.html', {
-        'title': 'Inicio',
+        'title': 'Inicio 2',
         'mi_variable': 'Soy un dato que está en la vista',
         'nombre': nombre,
         'lenguajes': lenguajes,
+        'years': hasta,
     })
+
 
 def hola_django(request):
     return render(request, 'hola_django.html')
