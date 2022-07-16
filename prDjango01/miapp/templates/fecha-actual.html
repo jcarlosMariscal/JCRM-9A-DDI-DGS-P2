@@ -8,7 +8,7 @@
 <p>Años hasta el 2050</p>
 <ul>
     {% for year in years %}
-        {% if year |divisibleby:2 == True %} <!-- FILTROS TAMBIÉN-->
+        {% if year|divisibleby:2 == True %} <!-- FILTROS TAMBIÉN-->
             <li>{{year}}</li>
         {% endif %}
     {% endfor %}
