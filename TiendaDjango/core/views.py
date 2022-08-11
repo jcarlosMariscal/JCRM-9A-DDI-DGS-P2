@@ -1,3 +1,5 @@
+Los accesos directos ayudan a simplificar Mi unidad … 
+En las próximas semanas, los elementos que se encuentren en más de una carpeta se reemplazarán por accesos directos. El acceso a los archivos y las carpetas no cambiará.Más información
 from django.shortcuts import render
 from .models import Producto
 
@@ -20,3 +22,15 @@ def home(request):
         "productos": productos
     }
     return render(request, 'core/home.html', contexto)
+
+def form_producto(request):
+    contexto = {
+        'form': ProductoForm()
+    }
+    if request.method == 'POST':
+        formulario = ProductoForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            contexto['mensaje'] = "Datos guardados correctamente"
+
+    return render(request, 'core/form_producto.html', contexto)
