@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 # from TiendaDjango.core.forms import ProductoForm
+from .forms import ProductoForm
 from .models import Producto
 
 """class Producto:

@@ -1,7 +1,3 @@
-Los accesos directos ayudan a simplificar Mi unidad … En las próximas semanas,
-los elementos que se encuentren en más de una carpeta se reemplazarán por
-accesos directos. El acceso a los archivos y las carpetas no cambiará.Más
-información
 <!-- SE CREA DENTRO DE templates/core -->
 <!DOCTYPE html>
 <html lang="en">
@@ -25,17 +21,21 @@ información
     <title>Formulario</title>
   </head>
   <body>
-    <div class="row">
-      <form method="POST" action="" id="formulario">
-        {% csrf_token %}
-        <!-- Seguridad en el filtrado de datos POST -->
-        <div class="form-group">{{form.as_table}}</div>
-        <input type="submit" class="btn btn-danger" value="Enviar" />
-        <input type="reset" class="btn btn-primary" value="Limpiar" />
-        <div id="error" class="alert alert-danger" role="alert">
-          {{mensaje}}
-        </div>
-      </form>
+    <br /><br /><br />
+    <div class="container">
+      <div class="row">
+        <form method="POST" action="" id="formulario">
+          {% csrf_token %}
+          <!-- Seguridad en el filtrado de datos POST -->
+          <div class="form-group">{{form.as_table}}</div>
+          <br />
+          <input type="submit" class="btn btn-danger" value="Enviar" />
+          <input type="reset" class="btn btn-primary" value="Limpiar" />
+          <div id="error" class="alert alert-danger" role="alert">
+            {{mensaje}}
+          </div>
+        </form>
+      </div>
     </div>
   </body>
 </html>
