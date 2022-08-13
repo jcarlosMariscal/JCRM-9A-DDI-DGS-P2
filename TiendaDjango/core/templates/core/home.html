@@ -39,14 +39,24 @@
           <td>{{producto.valorProducto}}</td>
           <td>{{producto.categoria}}</td>
           <td>
-            <a href="{% url 'form_mod_producto' producto.idProducto %}"
+            <a
+              class="btn btn-light"
+              href="{% url 'form_mod_producto' producto.idProducto %}"
               >Modificar</a
+            >
+            <a
+              class="btn btn-danger"
+              href="{% url 'form_del_producto' producto.idProducto %}"
+              >Eliminar</a
             >
           </td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
+    <a class="btn btn-primary" href="{% url 'form_producto' %}"
+      >Nuevo producto</a
+    >
     {% comment %} {% load static %}
     <img src="{% static 'core/img/pato.gif' %}" />
 

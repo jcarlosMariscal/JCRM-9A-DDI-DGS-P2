@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # from TiendaDjango.core.forms import ProductoForm
 from .forms import ProductoForm
@@ -47,3 +47,8 @@ def form_mod_producto(request, id):
       formulario.save()
       contexto['mensaje'] = "Se modificaron los datos correctamente"
   return render(request, 'core/form_mod_producto.html', contexto)
+ 
+def form_del_producto(request, id):
+  producto = Producto.objects.get(idProducto = id)
+  producto.delete()
+  return redirect (to="home")
